@@ -27,9 +27,9 @@
         "cache/filesystem-adapter": "^1.1"
     },
     "autoload": {
-        "psr-4": {
-            "Oracle\\": "src/Oracle"
-        },
+        "classmap": [
+            "src/"
+        ],
         "files": [
             "src/Oracle/Oci/Common/Utils.php"
         ]
