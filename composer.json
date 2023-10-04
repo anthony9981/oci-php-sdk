@@ -28,7 +28,7 @@
     },
     "autoload": {
         "classmap": [
-            "src/"
+            "src/Oracle/Oci"
         ],
         "files": [
             "src/Oracle/Oci/Common/Utils.php"
