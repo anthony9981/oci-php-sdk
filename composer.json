@@ -1,5 +1,5 @@
 {
-    "name": "oracle/oci-php-sdk",
+    "name": "anthony9981/oci-php-sdk",
     "version": "0.1.0",
     "homepage": "https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devtoolslanding.htm",
     "description": "OCI SDK for PHP - Oracle Cloud Infrastructure services in your PHP project",
