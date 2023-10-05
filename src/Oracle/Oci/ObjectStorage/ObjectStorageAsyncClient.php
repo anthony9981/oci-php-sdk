@@ -94,9 +94,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{objectName}', utf8_encode($objectName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{objectName}', mb_convert_encoding($objectName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("DELETE", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -141,7 +141,7 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/workRequests/{workRequestId}";
-        $__path = str_replace('{workRequestId}', utf8_encode($workRequestId), $__path);
+        $__path = str_replace('{workRequestId}', mb_convert_encoding($workRequestId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("DELETE", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -213,9 +213,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{objectName}', utf8_encode($objectName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{objectName}', mb_convert_encoding($objectName, 'UTF-8'), $__path);
 
         $__body = json_encode($commitMultipartUploadDetails);
 
@@ -310,8 +310,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/actions/copyObject";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($copyObjectDetails);
 
@@ -361,7 +361,7 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
 
         $__body = json_encode($createBucketDetails);
 
@@ -450,8 +450,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/u";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($createMultipartUploadDetails);
 
@@ -504,8 +504,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/p/";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($createPreauthenticatedRequestDetails);
 
@@ -558,8 +558,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($createReplicationPolicyDetails);
 
@@ -612,8 +612,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/retentionRules";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($createRetentionRuleDetails);
 
@@ -669,8 +669,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("DELETE", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -733,9 +733,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{objectName}', utf8_encode($objectName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{objectName}', mb_convert_encoding($objectName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("DELETE", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -789,8 +789,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/l";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("DELETE", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -841,9 +841,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/p/{parId}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{parId}', utf8_encode($parId), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{parId}', mb_convert_encoding($parId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("DELETE", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -894,9 +894,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{replicationId}', utf8_encode($replicationId), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{replicationId}', mb_convert_encoding($replicationId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("DELETE", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -953,9 +953,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/retentionRules/{retentionRuleId}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{retentionRuleId}', utf8_encode($retentionRuleId), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{retentionRuleId}', mb_convert_encoding($retentionRuleId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("DELETE", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1021,8 +1021,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1114,7 +1114,7 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1243,9 +1243,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{objectName}', utf8_encode($objectName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{objectName}', mb_convert_encoding($objectName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers, 'response_body_type' => 'binary' ]);
     }
@@ -1293,8 +1293,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/l";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1345,9 +1345,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/p/{parId}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{parId}', utf8_encode($parId), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{parId}', mb_convert_encoding($parId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1398,9 +1398,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{replicationId}', utf8_encode($replicationId), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{replicationId}', mb_convert_encoding($replicationId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1451,9 +1451,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/retentionRules/{retentionRuleId}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{retentionRuleId}', utf8_encode($retentionRuleId), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{retentionRuleId}', mb_convert_encoding($retentionRuleId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1498,7 +1498,7 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/workRequests/{workRequestId}";
-        $__path = str_replace('{workRequestId}', utf8_encode($workRequestId), $__path);
+        $__path = str_replace('{workRequestId}', mb_convert_encoding($workRequestId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1558,8 +1558,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("HEAD", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1646,9 +1646,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{objectName}', utf8_encode($objectName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{objectName}', mb_convert_encoding($objectName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("HEAD", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1717,7 +1717,7 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1786,9 +1786,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{objectName}', utf8_encode($objectName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{objectName}', mb_convert_encoding($objectName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1848,8 +1848,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/u";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -1945,8 +1945,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/objectversions";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2036,8 +2036,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/o";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2103,8 +2103,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/p/";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2164,8 +2164,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2225,8 +2225,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/replicationSources";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2274,8 +2274,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/retentionRules";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2332,7 +2332,7 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/workRequests/{workRequestId}/errors";
-        $__path = str_replace('{workRequestId}', utf8_encode($workRequestId), $__path);
+        $__path = str_replace('{workRequestId}', mb_convert_encoding($workRequestId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2389,7 +2389,7 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/workRequests/{workRequestId}/logs";
-        $__path = str_replace('{workRequestId}', utf8_encode($workRequestId), $__path);
+        $__path = str_replace('{workRequestId}', mb_convert_encoding($workRequestId, 'UTF-8'), $__path);
 
         return $this->callApiAsync("GET", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2496,8 +2496,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/actions/makeBucketWritable";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("POST", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2650,9 +2650,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{objectName}', utf8_encode($objectName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{objectName}', mb_convert_encoding($objectName, 'UTF-8'), $__path);
 
         $__body = $putObjectBody;
 
@@ -2717,8 +2717,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/l";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($putObjectLifecyclePolicyDetails);
 
@@ -2768,8 +2768,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/actions/reencrypt";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         return $this->callApiAsync("POST", "{$this->endpoint}{$__path}{$__queryStr}", [ 'headers' => $__headers ]);
     }
@@ -2829,9 +2829,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/actions/reencrypt/{objectName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{objectName}', utf8_encode($objectName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{objectName}', mb_convert_encoding($objectName, 'UTF-8'), $__path);
 
         $__body = json_encode($reencryptObjectDetails);
 
@@ -2884,8 +2884,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/actions/renameObject";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($renameObjectDetails);
 
@@ -2938,8 +2938,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/actions/restoreObjects";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($restoreObjectsDetails);
 
@@ -2998,8 +2998,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($updateBucketDetails);
 
@@ -3049,7 +3049,7 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
 
         $__body = json_encode($updateNamespaceMetadataDetails);
 
@@ -3102,8 +3102,8 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/actions/updateObjectStorageTier";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
 
         $__body = json_encode($updateObjectStorageTierDetails);
 
@@ -3165,9 +3165,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/retentionRules/{retentionRuleId}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{retentionRuleId}', utf8_encode($retentionRuleId), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{retentionRuleId}', mb_convert_encoding($retentionRuleId, 'UTF-8'), $__path);
 
         $__body = json_encode($updateRetentionRuleDetails);
 
@@ -3292,9 +3292,9 @@ class ObjectStorageAsyncClient extends AbstractClient
         $__queryStr = HttpUtils::queryMapToString($__query);
 
         $__path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}";
-        $__path = str_replace('{namespaceName}', utf8_encode($namespaceName), $__path);
-        $__path = str_replace('{bucketName}', utf8_encode($bucketName), $__path);
-        $__path = str_replace('{objectName}', utf8_encode($objectName), $__path);
+        $__path = str_replace('{namespaceName}', mb_convert_encoding($namespaceName, 'UTF-8'), $__path);
+        $__path = str_replace('{bucketName}', mb_convert_encoding($bucketName, 'UTF-8'), $__path);
+        $__path = str_replace('{objectName}', mb_convert_encoding($objectName, 'UTF-8'), $__path);
 
         $__body = $uploadPartBody;
 

@@ -8,6 +8,7 @@
 namespace Oracle\Oci\ObjectStorage\Transfer;
 
 use GuzzleHttp\Promise;
+use GuzzleHttp\Promise\PromiseInterface;
 use Oracle\Oci\ObjectStorage\ObjectStorageAsyncClient;
 use Oracle\Oci\Common\Logging\Logger;
 use UploadManagerConstants;
@@ -28,7 +29,7 @@ abstract class AbstractMultipartUploader extends AbstractUploader
         $this->config = $uploadManagerRequest->getUploadConfig();
     }
 
-    public function promise()
+    public function promise(): PromiseInterface
     {
         if ($this->promise) {
             return $this->promise;

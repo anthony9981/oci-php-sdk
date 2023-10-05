@@ -7,6 +7,7 @@
 */
 namespace Oracle\Oci\ObjectStorage\Transfer;
 
+use GuzzleHttp\Promise\PromiseInterface;
 use Oracle\Oci\ObjectStorage\ObjectStorageAsyncClient;
 use GuzzleHttp\Promise\PromisorInterface;
 
@@ -24,7 +25,7 @@ abstract class AbstractUploader implements PromisorInterface
         $this->uploadManagerRequest = $uploadManagerRequest;
     }
 
-    public function promise()
+    public function promise(): PromiseInterface
     {
         if ($this->promise) {
             return $this->promise;
